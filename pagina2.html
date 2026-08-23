@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscribirse a una actividad</title>
+</head>
+<body>
+    <h1>Inscribirse a una actividad</h1>
+    <form action="pagina3.html" method="post">
+        <fieldset>
+            <legend>Información de la Actividad</legend>
+
+            <label for="actividad">Actividad:</label><br>
+            <input type="text" id="actividad" name="actividad" value="Futbol" disabled><br>
+            <label for="lugar">Lugar:</label><br>
+            <input type="text" id="lugar" name="lugar" value="Cancha general" disabled><br>
+            <label for="dia">Dia:</label><br>
+            <input type="text" id="dia" name="dia" value="miercoles y viernes" disabled><br>
+            <label for="horario">Horario:</label><br>
+            <input type="text" id="horario" name="horario" value="19:00 - 21:00" disabled>
+        </fieldset>
+        <fieldset>
+            <legend>Datos del participante</legend>
+
+            <label for="nombre">Apellido y nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" maxlength="100" required><br>
+            <label for="dni">Dni:</label><br>
+            <input type="number" maxlength="8" placeholder="44556677" required><br>
+            <label for="fechanac">Fecha de nacimiento:</label><br>
+            <input type="date" id="fechanac" name="fechanac"><br>
+            <label for="correo">Correo electrónico</label><br>
+            <input type="email" id="correo" name="correo"><br>
+
+            <p>Sexo:</p>
+            <input type="radio" id="femenino" name="sexo" value="Femenino">
+            <label for="femenino">Femenino</label><br>
+
+            <input type="radio" id="masculino" name="sexo" value="Masculino">
+            <label for="masculino">Masculino</label><br>
+
+            <input type="radio" id="nobinario" name="sexo" value="No binairo">
+            <label for="nobinario">No binario</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Información deportiva</legend>
+            <label for="">Nivel:</label>
+            <select id="nivel" name="nivel">
+                <option value="inicial">Inicial</option>
+                <option value="intermedio">Intermedio</option>
+                <option value="avanzado">Avanzado</option>
+            </select>
+            <p>¿Posee experiencia previa?</p>
+            <input type="radio" id="si" name="experiencia" value="si">
+            <label for="si">Si</label><br>
+            <input type="radio" id="no" name="experiencia" value="no">
+            <label for="no">No</label><br><br>
+            <label for="observaciones">Observaciones</label><br>
+            <textarea id="observaciones" name="observaciones" rows="4" cols="50"></textarea>
+        </fieldset>
+        <br><br>
+        <fieldset>
+            <legend>Aceptación de condiciones</legend>
+            <input type="checkbox" id="condiciones" name="condiciones" value="aceptado" required>
+            <label for="condiciones">Acepto las condiciones de inscripcion.</label>
+        </fieldset>
+
+        <br><br>
+        <button type="submit">Aceptar</button>
+        <button type="reset">Cancelar</button>
+        
+    </form>
+    <footer>
+        <p>Deportes Unca - 2026</p>
+    </footer>
+</body>
+</html>
