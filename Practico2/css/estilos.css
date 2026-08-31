@@ -1,0 +1,60 @@
+/* CSS HEX
+--alice-blue: #e8eefcff;
+--yale-blue: #224870ff;
+--dark-cyan: #009ba3ff;
+--dark-coffee: #34241dff;
+*/
+
+h1 {
+    background-color: #224870ff;
+    color: white;
+    padding: 15px;
+}
+
+h2 {
+    color: #224870ff;
+}
+
+h3 {
+    font-size: 30px;
+}
+body {
+    padding-top: 60px;
+}
+footer {
+    background-color: #0e0d0d;
+    color: white;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.carousel-item img {
+    height: 600px;
+    object-fit: cover;
+}
+
+.card-img-top {
+    height: 165px;
+    object-fit: cover;
+}
+
+.fondo-celeste {
+    background-color: #e8eefcff;
+    padding: 30px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+}
+
+.navbar-celeste {
+    background-color: #e8eefcff;
+    padding:10px;
+}
+
+article:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tabla-head-celeste th {
+    color: #224870;
+    background-color: #e8eefcff;
+}
