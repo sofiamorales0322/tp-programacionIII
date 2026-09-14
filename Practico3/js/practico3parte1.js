@@ -1,38 +1,49 @@
 //Ejercicio 1
-function validarFechaDeNacimiento () {
-    let fechaNacimiento = document.getElementById("fechanac").value;
+function validarFechaDeNacimiento (numeroParticipante) {
+    let fechaNacimiento = document.getElementById("fechanac" + numeroParticipante).value;
 
     let fechaIngresada = new Date(fechaNacimiento)
     let fechaActual = new Date()
 
 
     if (fechaIngresada > fechaActual) {
-        document.getElementById("mensajeFecha").innerHTML = "La fecha de nacimiento no puede ser posterior a la fecha actual";
+        document.getElementById("mensajeFecha" + numeroParticipante).innerHTML = "La fecha de nacimiento no puede ser posterior a la fecha actual";
         return false;
     }
 
-    document.getElementById("mensajeFecha").innerHTML = "";
+    document.getElementById("mensajeFecha" + numeroParticipante).innerHTML = "";
     return true;
 }
 
 //Ejercicio 2
-function validarDni () {
-    let dniForm = document.getElementById("dni").value;
+function validarDni (numeroParticipante) {
+    let dniForm = document.getElementById("dni" + numeroParticipante).value;
     let mensaje = "";
     if (!/^\d{8}$/.test(dniForm)) {
         mensaje = "El DNI debe contener 8 dígitos"
-        document.getElementById("mensajeDni").innerHTML = mensaje;
+        document.getElementById("mensajeDni" + numeroParticipante).innerHTML = mensaje;
         return false;
     }
-    document.getElementById("mensajeDni").innerHTML = mensaje;
+    document.getElementById("mensajeDni" + numeroParticipante).innerHTML = mensaje;
     return true;
 }
 
 function validarFormulario () {
-    let fechaValida = validarFechaDeNacimiento();
-    let dniValido = validarDni();
 
-    return fechaValida && dniValido;
+    let cantidad = Number(document.getElementById("cantidadParticipantes").value);
+
+    let formularioEsValido = true;
+
+    for (let i = 1; i <= cantidad; i++) {
+        let fechaValida = validarFechaDeNacimiento(i);
+        let dniValido = validarDni(i);
+
+        if (!fechaValida || !dniValido) {
+            formularioEsValido = false;
+        }
+    }
+
+    return formularioEsValido;
 }
 
 //Ejercicio 3.1
