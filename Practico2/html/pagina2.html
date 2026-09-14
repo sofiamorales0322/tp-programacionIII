@@ -76,68 +76,17 @@
             <fieldset class="border p-3 rounded mb-3">
                 <legend>Datos del participante</legend>
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Apellido y nombre:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" maxlength="100" required>
+                    <label for="cantidadParticipantes" class="form-label">Cantidad de participantes</label>
+                    <input type="number" id="cantidadParticipantes" min="1" max="10" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="dni" class="form-label">Dni:</label>
-                    <input type="text" class="form-control" id="dni" name="dni" maxlength="8" placeholder="44556677" required>
-                    <p id="mensajeDni"></p>
+                    <button type="button" id="btnParticipantes" class="btn btn-secondary">Generar participantes</button>
                 </div>
-                <div class="mb-3">
-                    <label for="fechanac" class="form-label">Fecha de nacimiento:</label>
-                    <input type="date" class="form-control" id="fechanac" name="fechanac">
-                    <p id="mensajeFecha"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="correo" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" name="correo">
-                </div>
-                <p>Sexo:</p>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" id="femenino" name="sexo" value="Femenino">
-                    <label for="femenino" class="form-check-label">Femenino</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" id="masculino" name="sexo" value="Masculino">
-                    <label for="masculino" class="form-check-label">Masculino</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" id="nobinario" name="sexo" value="No binario">
-                    <label for="nobinario" class="form-check-label">No binario</label>
-                </div>
+
+                <div id="participantes"></div>
             </fieldset>
 
-            <fieldset class="border mb-3 p-3 rounded">
-                <div class="mt-3">
-                    <legend>Información deportiva</legend>
-                </div>
-                <div class="mb-3">
-                    <label for="nivel" class="form-label">Nivel:</label>
-                    <select class="form-select" id="nivel" name="nivel">
-                        <option value="inicial">Inicial</option>
-                        <option value="intermedio">Intermedio</option>
-                        <option value="avanzado">Avanzado</option>
-                    </select>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <p>¿Posee experiencia previa?</p>
-                    <input type="radio" class="form-check-input" id="si" name="experiencia" value="si">
-                    <label for="si" class="form-check-label">Si</label>
-                </div>
-                <div class="form-check form-check-inline mb-3">
-                    <input type="radio" class="form-check-input" id="no" name="experiencia" value="no">
-                    <label for="no" class="form-check-label">No</label>
-                </div>
-
-                <div class="mb-3">
-                    <label for="observaciones" class="form-label">Observaciones</label>
-                    <textarea id="observaciones" class="form-control" name="observaciones" rows="4" cols="50"></textarea>
-                </div>
-            </fieldset>
-
-            <fieldset>
+            <fieldset id="aceptacion" style="display: none;">
                 <legend>Aceptación de condiciones</legend>
                 <div class="form-check mb-4">
                     <input type="checkbox" class="form-check-input" id="condiciones" name="condiciones" value="aceptado" required>
@@ -154,6 +103,7 @@
         <p>Deportes Unca - 2026</p>
     </footer>
     <script src="../../Practico3/js/practico3parte1.js"></script>
+    <script src="../../Practico3/js/practico3Ejercicio5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

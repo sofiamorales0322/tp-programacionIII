@@ -40,7 +40,7 @@ function Actividad (nombre, lugar, dia, horario, cupo, estado) {
     this.nombre = nombre;
     this.lugar = lugar;
     this.dia = dia;
-    this.horario;
+    this.horario = horario;
     this.cupo = cupo;
     this.estado = estado;
 }
@@ -61,9 +61,26 @@ class SistemaDeportes {
 
 //Ejercicio 3.3
 let sistema = new SistemaDeportes();
-sistema.agregarActividad(new Actividad("Futbol", "Cancha general", "Miercoles y Viernes", "19:00 - 21:00", "40", "disponible"));
+sistema.agregarActividad(new Actividad("Futbol", "Cancha general", "Miercoles y Viernes", "19:00", "40", "disponible"));
 sistema.agregarActividad(new Actividad("Voley", "Cancha techada", "Miercoles y Viernes", "17:00", "50", "disponible"));
 sistema.agregarActividad(new Actividad("Basquet", "Cancha techada", "Martes y Jueves", "20:00", "60", "disponible"));
 sistema.agregarActividad(new Actividad("Atletismo", "Cancha general", "Miercoles y Viernes", "20:00", "30", "disponible"));
 
 //console.log(sistema.listarActividades());
+
+//Ejercicio 4
+
+const tbody = document.getElementById("cuerpoTabla");
+
+sistema.actividades.forEach(actividad => {
+
+    const fila = tbody.insertRow();
+
+    fila.insertCell(0).textContent = actividad.nombre;
+    fila.insertCell(1).textContent = actividad.lugar;
+    fila.insertCell(2).textContent = actividad.dia;
+    fila.insertCell(3).textContent = actividad.horario;
+    fila.insertCell(4).textContent = actividad.cupo;
+    fila.insertCell(5).textContent = actividad.estado;
+});
+

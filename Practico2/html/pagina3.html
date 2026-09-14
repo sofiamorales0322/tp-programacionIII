@@ -52,33 +52,21 @@
 <main class="flex-grow-1">
     <div class="container">
         <h2>Mis inscripciones</h2>
-        <table class="table table-bordered">
+        <table id="tablaActividades" class="table table-bordered">
             <thead class="tabla-head-celeste">
             <tr>
                 <th>Actividad</th>
                 <th>Lugar</th>
                 <th>Día</th>
                 <th>Horario</th>
+                <th>Cupos</th>
                 <th>Estado</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>Fútbol</td>
-                <td>Cancha general</td>
-                <td>Miércoles</td>
-                <td>19:00</td>
-                <td>Activa</td>
-            </tr>
-            <tr>
-                <td>Voley</td>
-                <td>Cancha techada</td>
-                <td>Viernes</td>
-                <td>17:00</td>
-                <td>Activa</td>
-            </tr>
+            <tbody id="cuerpoTabla">
             </tbody>
         </table>
+
 
         <button type="button" class="btn btn-light">Cancelar suscripcion</button>
     </div>
