@@ -1,0 +1,57 @@
+(deportes) PS D:\Documentos\UNCa\Programacion III\tp-programacionIII\deportes> python manage.py shell
+9 objects imported automatically (use -v 2 for details).
+
+1.
+>>> actividad1 = ActividadDeportiva(nombre="Futbol", descripcion="Actividad deportiva de futbol", lugar="cancha central", cupo=30)
+>>> actividad1.save()
+
+>>> actividad2 = ActividadDeportiva(nombre="Basquet", descripcion="Espacio de formación enfocado en el desarrollo del juego colectivo, la táctica y la técnica individual.", lugar="Cancha techada", cupo=40)
+>>> actividad2.save()
+>>> actividad3 = ActividadDeportiva(nombre="Voley", descripcion="Entrenamiento dinámico enfocado en el aprendizaje en un ambiente de compañerismo y superación.", lugar="Cancha techada", cupo=40)
+>>> actividad3.save()
+
+2.
+>>> horario1 = Horario(dia="Miercoles", hora_inicio="19:00", hora_fin="21:00", actividad=actividad1)
+>>> horario1.save()
+>>> horario2 = Horario(dia="Viernes", hora_inicio="20:00", hora_fin="22:00", actividad=actividad1)
+>>> horario2.save()
+
+3.
+>>> inscripcion1 = Inscripcion(nombre="Juan", apellido="Perez", dni="22334456", estado=True, horario=horario1)
+>>> inscripcion1.save()
+>>> inscripcion2 = Inscripcion(nombre="Maria", apellido="Lopez", dni="99876543", estado=True, horario=horario1)
+>>> inscripcion2.save()
+>>> inscripcion3 = Inscripcion(nombre="Pedro", apellido="Gonzalez", dni="66555890", estado=True, horario=horario2)
+>>> inscripcion3.save()
+
+4.
+>>> actividades = ActividadDeportiva.objects.all()
+>>> print(actividades)
+<QuerySet [<ActividadDeportiva: Futbol>, <ActividadDeportiva: Basquet>, <ActividadDeportiva: Voley>]>
+
+5. 
+>>> horariosAct1 = Horario.objects.filter(actividad=actividad1)
+>>> print(horariosAct1)
+<QuerySet [<Horario: 19:00:00 - 21:00:00>, <Horario: 20:00:00 - 22:00:00>]>
+
+6.
+>>> inscripciones_activas = Inscripcion.objects.filter(estado=1)
+>>> print(inscripciones_activas)
+<QuerySet [<Inscripcion: Futbol - 19:00:00 - 21:00:00 - Juan Perez - Activa>, <Inscripcion: Futbol - 19:00:00 - 21:00:00 - Maria Lopez - Activa>, <Inscripcion: Futbol - 20:00:00 - 22:00:00 - Pedro Gonzalez - Activa>]>
+
+7.
+>>> inscripcionesHorario1 = Inscripcion.objects.filter(horario=horario1)
+>>> print(inscripcionesHorario1)
+<QuerySet [<Inscripcion: Futbol - 19:00:00 - 21:00:00 - Juan Perez - Activa>, <Inscripcion: Futbol - 19:00:00 - 21:00:00 - Maria Lopez - Activa>]>
+
+8.
+>>> actividad3.cupo = 35
+>>> actividad3.save()
+
+9.
+>>> inscripcion1.estado = False
+>>> inscripcion1.save()
+
+10.
+>>> inscripcion1.delete()
+(1, {'reservas.Inscripcion': 1})
