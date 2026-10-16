@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades deportivas</title>
+</head>
+<body>
+    <header>
+        <h1>Deportes UNCA</h1>
+        <nav>
+            <a href="{% url 'reservas:agregar_actividad' %}">
+                Agregar actividad
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Actividades deportivas registradas</h2>
+
+        {% if actividades %}
+            {% for actividad in actividades %}
+                <article>
+                    <h3>{{ actividad.nombre }}</h3>
+
+                    <p>
+                        <strong>Descripción:</strong>
+                        {{ actividad.descripcion }}
+                    </p>
+
+                    <p>
+                        <strong>Lugar:</strong>
+                        {{ actividad.lugar }}
+                    </p>
+
+                    <p>
+                        <strong>Cupo:</strong>
+                        {{ actividad.cupo }}
+                    </p>
+
+                    <a href="{% url 'reservas:detalle_actividad' actividad.id %}">
+                        Ver detalle
+                    </a>
+                </article>
+                <hr>
+            {% endfor %}
+        {% else %}
+            <p>No hay actividades deportivas registradas.</p>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>Deportes UNCA - 2026</p>
+    </footer>
+</body>
+</html>

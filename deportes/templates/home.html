@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deportes UNCa</title>
+</head>
+<body>
+    <h1>Deportes UNCa</h1>
+    <h2>Plataforma de Actividades Deportivas</h2>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'reservas:lista_actividades' %}">Actividades deportivas</a></li>
+            <li><a href="#">Inscribirse a una actividad</a></li>
+            <li><a href="#">Mis inscripciones</a></li>
+            <li><a href="#">Cancelar suscripcion</a></li>
+        </ul>
+    </nav>
+    <section id="articulos" class="mt-4 mb-5">
+        <p>Para consultar las Actividades Deportivas ingrese al siguiente link:
+        <a href="{% url 'reservas:lista_actividades' %}">Actividades Deportivas</a></p>
+    </section>
+
+    <hr>
+    <footer>
+        <p>Deportes Unca - 2026</p>
+    </footer>
+</body>
+</html>

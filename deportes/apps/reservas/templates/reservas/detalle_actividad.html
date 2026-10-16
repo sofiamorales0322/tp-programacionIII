@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Actividad deportiva</title>
+</head>
+<body>
+    <header id="home" class="d-flex justify-content-center">
+        <h1>Detalle de Actividad Deportiva</h1>
+        <nav>
+            <a href="{% url 'reservas:lista_actividades' %}">
+                Inicio
+            </a>
+        </nav>
+    </header>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <section class="d-flex justify-content-center">
+        <div class="card w-50 mb-3 text-bg-light">
+            <div class="card-body">
+                <h4 class="card-title d-inline">{{ actividad.nombre }}</h4>
+                <p class="card-text"><strong>Descripcion: </strong>{{ actividad.descripcion }}</p>
+                <p class="card-text"><strong>Lugar: </strong>{{ actividad.lugar }}</p>
+                <p class="card-text"><strong>Cupo: </strong>{{ actividad.cupo }}</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
